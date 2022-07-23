@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="home.php">
+    <a class="navbar-brand" href="index.php">
       <img src="/07_22_practical/photos/logo.jpg" alt="logo" width="150">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="home.php">HOME</a>
+          <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="registration.php">REGISTER</a>
