@@ -6,7 +6,7 @@
 
 <body>
     <!-- navbar -->
-    <?php include("navbar.php"); ?>
+    <?php include("navbar.php"); ?> 
 
     <div class="container">
         <div class="row d-flex justify-content-center mt-5">
