@@ -32,7 +32,7 @@
         </li> -->
       </ul>
     </div>
-    <form class="d-flex" method="POST" action="selectCustomer.php">
+    <form class="d-flex" method="GET" action="selectCustomer.php">
         <input class="form-control me-2 mt-3" type="search" placeholder="Enter Customer ID" aria-label="Search" name="CustomerId" id="CustomerId">
         <button class="btn btn-outline-light me-3 mt-3 text-nowrap" type="submit">Search Customer</button>
       </form>

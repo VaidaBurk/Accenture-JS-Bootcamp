@@ -12,12 +12,12 @@ $entry = [];
 if ($connection->connect_error) {
     $errorMessage = $connection->connect_error;
 } 
-if ($_POST["CustomerId"] == null)
+if ($_GET["CustomerId"] == null)
 {
     $errorMessage = "No ID entered.";
 }
 else {
-    $querry = "SELECT * FROM customers WHERE id = " . $_POST["CustomerId"] . " ";
+    $querry = "SELECT * FROM customers WHERE id = " . $_GET["CustomerId"] . " ";
     $result = $connection->query($querry);
     if ($result->num_rows == 0) {
         $errorMessage = "No entries found.";
