@@ -49,7 +49,7 @@ include("header.php");
                         </div>
                         <div class="col-8 p-5" id="costumerCard">
                             <h3>Customer Info</h3>
-                            <div class="row">
+                            <div class="row" hidden>
                                 <label class="col-3" for="customerId">ID</label>
                                 <input class="col-4" name="customerId" id="customerId" aria-disabled="disabled" value=<?= $entry["id"] ?> ></input>
                             </div>
