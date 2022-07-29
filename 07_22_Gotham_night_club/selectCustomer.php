@@ -11,7 +11,12 @@ $entry = [];
 
 if ($connection->connect_error) {
     $errorMessage = $connection->connect_error;
-} else {
+} 
+if ($_POST["CustomerId"] == null)
+{
+    $errorMessage = "No ID entered.";
+}
+else {
     $querry = "SELECT * FROM customers WHERE id = " . $_POST["CustomerId"] . " ";
     $result = $connection->query($querry);
     if ($result->num_rows == 0) {
@@ -20,6 +25,7 @@ if ($connection->connect_error) {
         $entry = $result->fetch_assoc();
     }
 }
+
 ?>
 
 
