@@ -10,8 +10,8 @@
     <div>
         <div class="row mt-3 text-center">
             <div class="col-12">
-                <a href="registration.php" class="btn btn-lg btn-outline-dark mx-2">Register</a>
-                <a class="btn btn-lg btn-outline-dark mx-2">Contact</a>
+                <a href="customers.php" class="btn btn-lg btn-outline-dark mx-2">This Evening Guest List</a>
+                <a href="registration.php" class="btn btn-lg btn-outline-dark mx-2">Not on The List?</a>
             </div>
         </div>
     </div>

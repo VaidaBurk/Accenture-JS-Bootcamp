@@ -14,6 +14,9 @@
         <li class="nav-item">
           <a class="nav-link" href="registration.php">REGISTER</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">CONTACT</a>
+        </li>
         <!-- <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>

@@ -1,5 +1,13 @@
 <?php
-if ($_POST["FirstName"] === "" || $_POST["LastName"] === "" || $_POST["Email"] === "") {
+
+$id = $_POST["customerId"];
+$firstName = $_POST["firstName"];
+$lastName = $_POST["lastName"];
+$email = $_POST["email"];
+$phoneNumber = $_POST["phoneNumber"];
+$comments = $_POST["comments"];
+
+if ($_POST["firstName"] === "" || $_POST["lastName"] === "" || $_POST["email"] === "") {
     $errorMessage = "First name, Last name and email are mandatory.";
 } else {
     $hostname = "localhost";
@@ -15,10 +23,11 @@ if ($_POST["FirstName"] === "" || $_POST["LastName"] === "" || $_POST["Email"] =
     $errorMessage = $connection->connect_error;
     }
     else {
-        $querry = "INSERT INTO customers (firstname, lastname, email, phone, comments, photo)
-        VALUES ('" . $_POST["FirstName"] . "','" . $_POST["LastName"] . "', '" . $_POST["Email"] . "','" . $_POST["Phone"] . "','" . $_POST["Comments"] . "','" . $_POST["Photo"] . "')";
+        $querry = "UPDATE `customers` SET 
+        `firstname`='$firstName',`lastname`='$lastName',`email`='$email',`phone`='$phoneNumber',`comments`='$comments' WHERE id=$id";
+        
         if ($connection->query($querry)) {
-            $success = "Customer succesfully added."; 
+            $success = "Customer succesfully updated."; 
         } else {
             $errorMessage = $connection->error;
         }
