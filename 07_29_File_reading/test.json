@@ -1,0 +1,64 @@
+{
+    "customer": [
+        {
+            "firstname": "Vaida",
+            "lastname": "Burk",
+            "email": "vaida@gmail.com",
+            "phonenumber": "+37062268119"
+        },
+        {
+            "firstname": "Vaida",
+            "lastname": "Burkauskait\u0117",
+            "email": "vaidoote@gmail.com",
+            "phonenumber": "862268118"
+        },
+        {
+            "firstname": "Jack",
+            "lastname": "Sparow",
+            "email": "jack@carribeanmail.com",
+            "phonenumber": "987555666"
+        },
+        {
+            "firstname": "Harry",
+            "lastname": "Potter",
+            "email": "harrypotter@gmail.com",
+            "phonenumber": "895674125"
+        },
+        {
+            "firstname": "Brandon",
+            "lastname": "Flowers",
+            "email": "brandon@postbox.com",
+            "phonenumber": "8652398564"
+        },
+        {
+            "firstname": "Agent",
+            "lastname": "Cooper",
+            "email": "cooper@fbi.com",
+            "phonenumber": "86541200005"
+        },
+        {
+            "firstname": "Bruce",
+            "lastname": "Wayne",
+            "email": "bruce@wayneenterprises.com",
+            "phonenumber": "0056987452"
+        },
+        {
+            "firstname": "James",
+            "lastname": "Gordon",
+            "email": "gordon@jcpd.com",
+            "phonenumber": "0025486485"
+        },
+        {
+            "firstname": "Harley",
+            "lastname": "Quinn",
+            "email": "harley@suicidesquad.com",
+            "phonenumber": "0001112223"
+        },
+        {
+            "firstname": "Bruce",
+            "lastname": "Wayne",
+            "email": "batman@batman.com",
+            "phonenumber": "000000111"
+        }
+    ]
+}

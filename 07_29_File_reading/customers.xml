@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customers>
+    <customer>
+        <firstname>Edward</firstname>
+        <lastname>Nygma</lastname>
+        <email>nygma@gspd.com</email>
+        <phonenumber>45645699</phonenumber>
+    </customer>
+    <customer>
+        <firstname>Leslie</firstname>
+        <lastname>Thompkins</lastname>
+        <email>leslie@gspd.com</email>
+        <phonenumber>45645688</phonenumber>
+    </customer>
+    <customer>
+        <firstname>Harvey</firstname>
+        <lastname>Bullock</lastname>
+        <email>bullock@gspd.com</email>
+        <phonenumber>45645677</phonenumber>
+    </customer>
+</customers>

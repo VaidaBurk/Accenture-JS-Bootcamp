@@ -15,5 +15,5 @@
             </div>
         </div>
     </div>
-    <img src="/07_22_practical/photos/home-pic.jpg" alt="" class="w-100 mt-3">
+    <img src="/07_22_Gotham_night_club/photos/home-pic.jpg" alt="" class="w-100 mt-3">
 </body>
