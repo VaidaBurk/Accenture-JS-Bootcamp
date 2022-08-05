@@ -1,0 +1,84 @@
+{
+    "band": [
+        {
+            "title": "The Killers",
+            "leadArtist": "Brandon Flowers",
+            "genres": "alternative rock, indie rock, pop rock, post-punk revival",
+            "yearFoundation": "2001",
+            "origin": "Nevada",
+            "website": "thekillersmusic.com"
+        },
+        {
+            "title": "Imagine Dragons",
+            "leadArtist": "Dan Reynolds",
+            "genres": "pop rock, electropop, indie pop, alternative rock, pop",
+            "yearFoundation": "2008",
+            "origin": "Nevada",
+            "website": "imaginedragonsmusic.com"
+        },
+        {
+            "title": "Arctic Monkeys",
+            "leadArtist": "Alex Turner",
+            "genres": "indie rock, alternative rock, post-Britpop",
+            "yearFoundation": "2002",
+            "origin": "England",
+            "website": "arcticmonkeys.com"
+        },
+        {
+            "title": "The xx",
+            "leadArtist": "Romy Madley Croft",
+            "genres": "indie rock, indie electronic, dream pop",
+            "yearFoundation": "2005",
+            "origin": "England",
+            "website": "thexx.info"
+        },
+        {
+            "title": "Foo Fighters",
+            "leadArtist": "Dave Grohl",
+            "genres": "alternative rock, hard rock, grunge, pop rock",
+            "yearFoundation": "1994",
+            "origin": "Washington",
+            "website": "foofighters.com"
+        },
+        {
+            "title": "Twenty One Pilots",
+            "leadArtist": "Tyler Joseph",
+            "genres": "indie pop, alternative hip-hop, electropop, rock",
+            "yearFoundation": "2009",
+            "origin": "Ohio",
+            "website": "twentyonepilots.com"
+        },
+        {
+            "title": "Nothing But Thieves",
+            "leadArtist": "Conor Mason",
+            "genres": "alternative rock, indie rock, hard rock",
+            "yearFoundation": "2012",
+            "origin": "England",
+            "website": "nbthieves.com"
+        },
+        {
+            "title": "Red Hot Chili Peppers",
+            "leadArtist": "Anthony Kiedis",
+            "genres": "func rock, alternative rock, funk metal, rap rock",
+            "yearFoundation": "1983",
+            "origin": "California",
+            "website": "redhotchilipeppers.com"
+        },
+        {
+            "title": "Franz Ferdinand",
+            "leadArtist": "Alex Kapranos",
+            "genres": "indie rock, post-punk revival, dance punk, dance rock, art rock",
+            "yearFoundation": "2001",
+            "origin": "Scotland",
+            "website": "franzferdinand.com"
+        },
+        {
+            "title": "Coldplay",
+            "leadArtist": "Chris Martin",
+            "genres": "alternative rock, pop rock, post-Britpop, pop",
+            "yearFoundation": "1996",
+            "origin": "England",
+            "website": "coldplay.com"
+        }
+    ]
+}
