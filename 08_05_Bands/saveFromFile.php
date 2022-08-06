@@ -51,21 +51,22 @@ function saveFromJson($fileName){
         $website = $band->website;
 
         saveToDB($connection, $title, $leadArtist, $genres, $yearFoundation, $origin, $website);
-    }
-} 
+    } ?>
 
-function saveToDB($connection, $title, $leadArtist, $genres, $yearFoundation, $origin, $website) {
-    $prepStatement = $connection->prepare(
-        "INSERT INTO bands (Title, Lead_artist, Genres, Year_of_foundation, Origin, Website)
-        VALUES (?,?,?,?)");
-    $prepStatement->bind_param("ssssss", $title, $leadArtist, $genres, $yearFoundation, $origin, $website);
-    $prepStatement->execute(); ?>
-
-<html>
+    <html>
     <?php include('header.php') ?>
     <body>
         <?php include('navbar.php') ?>
         <div class="alert alert-success m-5 p-5" role="alert">Data added to DB.</div>
     </body>
 </html> <?php
+}
+
+function saveToDB($connection, $title, $leadArtist, $genres, $yearFoundation, $origin, $website) {
+    $prepStatement = $connection->prepare(
+        "INSERT INTO bands (Title, Lead_artist, Genres, Year_of_foundation, Origin, Website)
+        VALUES (?,?,?,?,?,?)");
+    $prepStatement->bind_param("ssssss", $title, $leadArtist, $genres, $yearFoundation, $origin, $website);
+    $prepStatement->execute();
+
 } ?>

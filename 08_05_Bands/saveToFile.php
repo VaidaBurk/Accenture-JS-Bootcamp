@@ -6,7 +6,7 @@ function saveCSV(string $fileName, mysqli_result $bands) {
     $fileContent = $headerline;
 
     while ($entry = $bands->fetch_assoc()){
-        $fileContent .= '\n'; //line break
+        $fileContent .= "\n"; //line break
 
         $title = $entry["Title"];
         $leadArtist = $entry["Lead_artist"];
