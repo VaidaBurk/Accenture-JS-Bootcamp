@@ -11,16 +11,18 @@ if (isset($_POST["csvFileName"])) {
 }
 
 if (isset($_POST["jsonFileName"])) {
-    saveJSON($_POST["jsonFileName"], $bands);
+    Band::saveJSON($_POST["jsonFileName"], $bands);
 }
 ?>
 
 <html>
+
 <head>
     <?php
     include("header.php")
     ?>
 </head>
+
 <body>
     <?php include("navbar.php");
     echo Band::displayAllBandsHtml($bands);
@@ -32,7 +34,10 @@ if (isset($_POST["jsonFileName"])) {
                 <input type="text" readonly class="form-control-plaintext" value="Enter CSV file name">
             </div>
             <div class="col-auto">
-                <input type="text" class="form-control" id="csvName" name="csvFileName" placeholder="filename.csv">
+            <div class="input-group">
+                    <input type="text" class="form-control" placeholder="File name" name="csvFileName">
+                    <span class="input-group-text" id="basic-addon2">.csv</span>
+                </div>
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-secondary mb-3">Save to CSV</button>
@@ -43,7 +48,10 @@ if (isset($_POST["jsonFileName"])) {
                 <input type="text" readonly class="form-control-plaintext" value="Enter JSON file name">
             </div>
             <div class="col-auto">
-                <input type="text" class="form-control" name="jsonFileName" placeholder="filename.json">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="File name" name="jsonFileName">
+                    <span class="input-group-text" id="basic-addon2">.json</span>
+                </div>
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-secondary mb-3">Save to JSON</button>
@@ -51,4 +59,5 @@ if (isset($_POST["jsonFileName"])) {
         </form>
     </div>
 </body>
+
 </html>

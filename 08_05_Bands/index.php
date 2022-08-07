@@ -25,10 +25,6 @@
     </form>
     </div> <?php
     } ?>
-
-
-
-
 </body>
 
 </html>

@@ -3,6 +3,12 @@ use musicBands\Band;
     include("Band.php");
 
 function openFile(string $fileName){
+    $file = fopen($fileName, "r");
+    if (!$file || $fileName == "") {
+        echo ("<h2>File can't be opened.</h2>");
+        exit();
+    }
+
     $ext = pathinfo($fileName, PATHINFO_EXTENSION);
 
     if ($ext == "csv") {

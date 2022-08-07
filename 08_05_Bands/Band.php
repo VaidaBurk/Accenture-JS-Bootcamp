@@ -151,8 +151,59 @@ class Band {
             $fileContent .= $line;
         }
     
-        $file = fopen($fileName, "w");
+        $file = fopen($fileName . ".csv", "w");
         fwrite($file, $fileContent);
         fclose($file);
+    }
+
+    public static function saveJSON(string $fileName, array $bands){
+        $bandsArr = Array();
+
+        foreach($bands as $oneBand){
+            $band = array (
+                "title" => $oneBand->title,
+                "leadArtist" => $oneBand->leadArtist,
+                "genres" => $oneBand->genres,
+                "yearFoundation" => $oneBand->yearFoundation,
+                "origin" => $oneBand->origin,
+                "website" => $oneBand->website
+            );
+            array_push($bandsArr, $band);
+        }
+    
+        $json = json_encode(array("band" => $bandsArr), JSON_PRETTY_PRINT);
+        file_put_contents($fileName . ".json", $json);
+    }
+
+    public static function saveFromFile(string $fileName) {
+        $ext = pathinfo($fileName, PATHINFO_EXTENSION);
+        if ($ext == "csv") {
+            $bands = Band::fetchBandsFromCSV($fileName);
+        }
+        if ($ext == "json") {
+            $bands = Band::fetchBandsFromJSON($fileName);
+        }
+    
+        foreach($bands as $band){
+            $title = $band->title;
+            $leadArtist = $band->leadArtist;
+            $genres = $band->genres;
+            $yearFoundation = $band->yearFoundation;
+            $origin = $band->origin;
+            $website = $band->website;
+    
+            Band::saveToDB($title, $leadArtist, $genres, $yearFoundation, $origin, $website);
+        }
+    } 
+
+    public static function saveToDB($title, $leadArtist, $genres, $yearFoundation, $origin, $website) {
+        $connection = connectToDB();
+        $prepStatement = $connection->prepare(
+            "INSERT INTO bands (Title, Lead_artist, Genres, Year_of_foundation, Origin, Website)
+            VALUES (?,?,?,?,?,?)");
+        $prepStatement->bind_param("ssssss", $title, $leadArtist, $genres, $yearFoundation, $origin, $website);
+        $prepStatement->execute();
+
+        
     }
 }
