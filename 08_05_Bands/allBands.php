@@ -5,14 +5,6 @@ use musicBands\Band;
 include("Band.php");
 
 $bands = Band::fetchBandsFromDB();
-
-if (isset($_POST["csvFileName"])) {
-    Band::saveCSV($_POST["csvFileName"], $bands);
-}
-
-if (isset($_POST["jsonFileName"])) {
-    Band::saveJSON($_POST["jsonFileName"], $bands);
-}
 ?>
 
 <html>
@@ -25,6 +17,14 @@ if (isset($_POST["jsonFileName"])) {
 
 <body>
     <?php include("navbar.php");
+    if (isset($_POST["csvFileName"])) {
+        echo Band::saveCSV($_POST["csvFileName"], $bands);
+    }
+    
+    if (isset($_POST["jsonFileName"])) {
+        echo Band::saveJSON($_POST["jsonFileName"], $bands);
+    }
+    
     echo Band::displayAllBandsHtml($bands);
     ?>
     <!-- save to file buttons -->

@@ -132,7 +132,7 @@ class Band {
         return $htmlContent;
     }
 
-    public static function saveCSV(string $fileName, array $bands) {
+    public static function saveCSV(string $fileName, array $bands) : string{
         $fileContent = "";
         $headerline = "Title;LeadArtist;Genres;YearOfFoundation;Origin;Website";
         $fileContent = $headerline;
@@ -154,9 +154,12 @@ class Band {
         $file = fopen($fileName . ".csv", "w");
         fwrite($file, $fileContent);
         fclose($file);
+
+        return "<div class='alert alert-success m-5 p-3' role='alert'>File saved.";
+
     }
 
-    public static function saveJSON(string $fileName, array $bands){
+    public static function saveJSON(string $fileName, array $bands) : string {
         $bandsArr = Array();
 
         foreach($bands as $oneBand){
@@ -173,6 +176,8 @@ class Band {
     
         $json = json_encode(array("band" => $bandsArr), JSON_PRETTY_PRINT);
         file_put_contents($fileName . ".json", $json);
+
+        return "<div class='alert alert-success m-5 p-3' role='alert'>File saved.</div>";
     }
 
     public static function saveFromFile(string $fileName) {
