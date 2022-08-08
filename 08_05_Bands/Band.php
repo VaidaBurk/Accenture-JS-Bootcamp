@@ -45,8 +45,8 @@ class Band {
     {
         $bands = [];
         $fileContent = file_get_contents($fileName);
-        $jsonContent = json_decode($fileContent);
-        foreach ($jsonContent as $resultRow){
+        $bandsJson = json_decode($fileContent);
+        foreach ($bandsJson->band as $resultRow){
             $band = new Band (
                 $title = $resultRow->title,
                 $leadArtist = $resultRow->leadArtist,
@@ -207,8 +207,6 @@ class Band {
             "INSERT INTO bands (Title, Lead_artist, Genres, Year_of_foundation, Origin, Website)
             VALUES (?,?,?,?,?,?)");
         $prepStatement->bind_param("ssssss", $title, $leadArtist, $genres, $yearFoundation, $origin, $website);
-        $prepStatement->execute();
-
-        
+        $prepStatement->execute(); 
     }
 }
