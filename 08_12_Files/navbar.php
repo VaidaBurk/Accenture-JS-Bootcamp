@@ -12,7 +12,7 @@
           <a class="nav-link active" aria-current="page" href="displayFileReader.php">FILE READER</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">BANDS IN DB</a>
+          <a class="nav-link" href="displayAllBands.php">BANDS IN DB</a>
         </li>
       </ul>
     </div>
