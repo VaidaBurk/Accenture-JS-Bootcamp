@@ -1,17 +1,15 @@
 <?php
-namespace musicBands;
 
-include("../common/dbConnection.php");
-
-class Band {
+class Band
+{
     private string $title;
     private string $leadArtist;
     private string $genres;
-    private int $yearFoundation;
+    private string $yearFoundation;
     private string $origin;
     private string $website;
 
-    public function __construct(string $title, string $leadArtist, string $genres, int $yearFoundation, string $origin, string $website)
+    public function __construct(string $title, string $leadArtist, string $genres, string $yearFoundation, string $origin, string $website)
     {
         $this->title = $title;
         $this->leadArtist = $leadArtist;
@@ -19,27 +17,6 @@ class Band {
         $this->yearFoundation = $yearFoundation;
         $this->origin = $origin;
         $this->website = $website;
-    }
-
-    public static function fetchBandsFromDB() : array
-    {
-        $bands = [];
-        $connection = connectToDB("music_bands");
-        $query = "SELECT * FROM bands";
-        $result = $connection->query($query);
-        while ($resultRow = $result->fetch_assoc()){
-            $band = new Band (
-                $title = $resultRow["Title"],
-                $leadArtist = $resultRow["Lead_artist"],
-                $genres = $resultRow["Genres"],
-                $yearFoundation = $resultRow["Year_of_foundation"],
-                $origin = $resultRow["Origin"],
-                $website = $resultRow["Website"],
-            );
-            array_push($bands, $band);
-        }
-
-        return $bands;
     }
 
     public function displayOneRowHtml() : string
@@ -82,12 +59,5 @@ class Band {
         $htmlContent .= "</tbody></table></div>";
         return $htmlContent;
     }
-
-    public static function createBand(Band $band){
-        $connection = connectToDB();
-        $prepStatement = $connection->prepare("INSERT INTO bands ('Title', 'Lead_artist', 'Genres', 'Year_of_foundation', 'Origin', 'Website') 
-        VALUES (?,?,?,?,?,?)");
-        $prepStatement->bind_param("ssssss", $band->title, $band->leadArtist, $band->genres, $band->yearFoundation, $band->origin, $band->website);
-        $prepStatement->execute();
-    }
 }
+?>
