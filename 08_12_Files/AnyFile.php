@@ -2,9 +2,8 @@
 include "CsvFile.php";
 include "JsonFile.php";
 include "Band.php";
-include "..\common\dbConnection.php";
 
-abstract class AllFiles
+abstract class AnyFile
 {
     abstract public function readDataFromFile();
     abstract public function saveDataToFile(string $fileName, array $data);
@@ -12,7 +11,7 @@ abstract class AllFiles
     public static function fetchDataFromDB()
     {
         $bandsArr = [];
-        $connection = connectToDB("music_bands");
+        $connection = connectToDB();
         $query = "SELECT * FROM bands";
         $result = $connection->query($query);
         while ($resultRow = $result->fetch_assoc()){
@@ -23,6 +22,7 @@ abstract class AllFiles
                 $yearFoundation = $resultRow["Year_of_foundation"],
                 $origin = $resultRow["Origin"],
                 $website = $resultRow["Website"],
+                $id = $resultRow["Id"],
             );
             array_push($bandsArr, $band);
         }
@@ -34,7 +34,7 @@ abstract class AllFiles
 
     }
 
-    public static function openFile(string $fileName) : AllFiles
+    public static function openFile(string $fileName) : AnyFile
     {
         $file = fopen($fileName, "r");
         if (!$file || $fileName == "") {

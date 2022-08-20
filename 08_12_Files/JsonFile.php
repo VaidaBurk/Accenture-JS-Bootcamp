@@ -1,6 +1,6 @@
 <?php
 
-class JsonFile extends AllFiles
+class JsonFile extends AnyFile
 {
     private string $fileName;
 

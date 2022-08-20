@@ -1,6 +1,6 @@
 <?php
 
-class CsvFile extends AllFiles
+class CsvFile extends AnyFile
 {
     private string $fileName;
 

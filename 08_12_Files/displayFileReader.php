@@ -1,5 +1,5 @@
 <?php 
-include("fileReader.php");
+include "fileReader.php";
 ?>
 
 <html>
@@ -18,7 +18,7 @@ include("fileReader.php");
     </div>
     <?php
     if (isset($_POST["fileName"])) {
-        AllFiles::openFile($_POST["fileName"])->readDataFromFile(); ?>
+        AnyFile::openFile($_POST["fileName"])->readDataFromFile(); ?>
         
         <div class="m-5">
         <form method="post" action="saveFromFile.php">

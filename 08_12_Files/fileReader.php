@@ -1,3 +1,3 @@
 <?php
 
-include("AllFiles.php");
+include("AnyFile.php");

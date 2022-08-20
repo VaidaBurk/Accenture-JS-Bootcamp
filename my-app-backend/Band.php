@@ -27,7 +27,7 @@ class Band {
         $connection = connectToDB();
         $query = "SELECT * FROM bands";
         $result = $connection->query($query);
-        while ($resultRow = $result->fetch_assoc()){
+        while ($resultRow = $result->fetch_assoc()) {
             $band = new Band (
                 $title = $resultRow["Title"],
                 $leadArtist = $resultRow["Lead_artist"],
@@ -39,6 +39,13 @@ class Band {
             array_push($bands, $band);
         }
         return $bands;
+    }
+
+    public static function saveBandToDB(Band $band)
+    {
+        $connection = connectToDB();
+        $querry = "INSERT INTO bands (Title, Lead_artist, Genres, Yers_of_foundation, Origin, Website)
+                    VALUES ('')"
     }
 
     public static function fetchBandsFromJSON(string $fileName) : array
