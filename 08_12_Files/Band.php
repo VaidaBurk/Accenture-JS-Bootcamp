@@ -125,9 +125,9 @@ class Band
         $prepStatement->execute();
     }
 
-    public static function updateBand($band, $connection)
+    public static function updateBand($band, $con)
     {
-        $connection = $connection;
+        $connection = $con;
         $prepStatement = $connection->prepare("UPDATE bands SET Title = ?, Lead_artist = ?, Genres = ?, Year_of_foundation = ?, Origin = ?, Website = ? WHERE Id = ?");
         $prepStatement->bind_param("ssssssi", $band->title, $band->leadArtist, $band->genres, $band->yearFoundation, $band->origin, $band->website, $band->id);
         $prepStatement->execute();
