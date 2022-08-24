@@ -25,7 +25,7 @@ class JsonFile extends AnyFile
             );
             array_push($bandsArr, $band);
         }
-        echo Band::displayAllBandsHtml($bandsArr);
+        return $bandsArr;
     }
 
     public function saveDataToFile(string $fileName, array $data)

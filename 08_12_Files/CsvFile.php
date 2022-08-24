@@ -32,7 +32,7 @@ class CsvFile extends AnyFile
         }
         
         fclose($file);
-        echo Band::displayAllBandsHtml($bandsArr);
+        return $bandsArr;
     }
 
     public function saveDataToFile(string $fileName, array $data)
