@@ -117,7 +117,7 @@ class Band
         return new Band($band->title, $band->leadArtist, $band->genres, $band->yearFoundation, $band->origin, $band->website, $band->id);
     }
 
-    public static function createBand(Band $band)
+    public static function saveBandToDB(Band $band)
     {
         $connection = connectToDB();
         $prepStatement = $connection->prepare("INSERT INTO bands (Title, Lead_artist, Genres, Year_of_foundation, Origin, Website) VALUES (?,?,?,?,?,?)");
@@ -130,6 +130,13 @@ class Band
         $connection = $con;
         $prepStatement = $connection->prepare("UPDATE bands SET Title = ?, Lead_artist = ?, Genres = ?, Year_of_foundation = ?, Origin = ?, Website = ? WHERE Id = ?");
         $prepStatement->bind_param("ssssssi", $band->title, $band->leadArtist, $band->genres, $band->yearFoundation, $band->origin, $band->website, $band->id);
+        $prepStatement->execute();
+    }
+
+    public static function isBandAlreadyInDB(string $title, $connection)
+    {
+        $prepStatement = $connection->prepare("SELECT Id FROM bands WHERE Title = ?");
+        $prepStatement->bind_param("s", $title);
         $prepStatement->execute();
     }
 }

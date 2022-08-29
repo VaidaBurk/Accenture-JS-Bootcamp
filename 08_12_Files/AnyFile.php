@@ -29,11 +29,6 @@ abstract class AnyFile
         return $bandsArr;
     }
 
-    public function saveDataToDB()
-    {
-
-    }
-
     public static function openFile(string $fileName) : AnyFile
     {
         $file = fopen($fileName, "r");
@@ -54,4 +49,3 @@ abstract class AnyFile
         }
     }
 }
-?>
